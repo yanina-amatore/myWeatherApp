@@ -1,5 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width:100vw;
+}
+
 body {
   background-color: #faf8f1;
   color: #0a1520;
   font-family: 'Poppins', sans-serif;
+}
+
+.app-container{
+  border: 1px solid pink;
+  max-width: 1080px;
+  margin: 20px auto;
+display: flex;
+justify-content: center
+
+}
+
+.search-container{
+ width: 90%;
+ /* border: 1px solid pink; */
 }
