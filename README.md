@@ -1,4 +1,4 @@
-# React Boilerplate
+# My Weather App
 
 ## Packages Included
 
