@@ -13,7 +13,7 @@ module.exports = {
   plugins: [
     // for .env file
     new Dotenv ({
-      path: path.join(__dirname, '../server/.env')
+      path: path.join(__dirname, '../.env')
     })
   ],
   module: {

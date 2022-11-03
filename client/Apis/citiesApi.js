@@ -6,7 +6,7 @@ export const geoApiOptions = {
   method: 'GET',
   headers: {
     // need to hode key in .env
-    'X-RapidAPI-Key': '3d6373a80emshf5e1bbcda5e38fep1757adjsna98c528e0171',
+    'X-RapidAPI-Key': `${process.env.CITIES_KEY}`,
     'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
   }
 };
