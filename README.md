@@ -1,6 +1,6 @@
 # My Weather App
 
-## Packages Included
+## Tech
 
 - react (webpack, babel, etc.)
 - react-router-dom
