@@ -16,7 +16,10 @@ function Search({ onSearchChange }) {
         return {
           options: response.data.map((city) => {
             return {
-              value: `${city.latitude} ${city.longitude}`,
+              value: {
+                lat: `${city.latitude.toFixed(2)}`,
+                lon: `${city.longitude.toFixed(2)}`
+              },
               label: `${city.name}, ${city.countryCode}`,
             }
           })
