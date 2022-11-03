@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import Search from './Search'
 import Weather from './Weather'
+import Forecast from './Forecast'
 import { getWeatherData} from '../Apis/weatherApi'
 
 
@@ -10,18 +11,17 @@ function App() {
   const [forecast, setForecast] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
-
     return getWeatherData(searchData)
     .then ((res) => {
-      console.log( 'res: ',res)
-      setWeather({ city: res.weatherResponse.label, ...res.weatherResponse });
-      setForecast({ city: res.forcastResponse.label, ...res.forcastResponse });
+     
+      setWeather({ city: searchData.label, ...res.resWeather });
+      setForecast({ city: searchData.label, ...res.resForecast});
     } )
-    // .catch(console.log);
+    .catch((err) => {
+      console.log('Err message: ' + err)
+    })
   }
   
- console.log('weather', weather)
- console.log('forecast', forecast)
 
   return (
     <div className='app-container'>
@@ -32,6 +32,10 @@ function App() {
       <div className='weather-container'>
         {/* check if we have any data if not don't show anything */}
           {Weather && <Weather data={weather}/>}
+      </div>
+      <div className='forecast-container'>
+        {/* check if we have any data if not don't show anything */}
+          {Forecast && <Forecast data={forecast}/>}
       </div>
     </div>
   )
