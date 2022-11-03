@@ -9,7 +9,7 @@ console.log(data)
           <p className='city'>{data?.city}</p>
           <p className='weather-description'>{data?.weather[0].description}</p>
           <figure>
-            <img alt='weather' className='weather-icon' src={`${data?.weather[0].icon.png}`} />
+            <img alt='weather' className='weather-icon' src={`../img/${data?.weather[0].icon}.png`} />
           </figure>
         </div>
         <div className='bottom'>
