@@ -2,7 +2,7 @@ import React from 'react'
 
 function Weather({data}) {
 
-  return (
+   return (
     <>
       <div className='weather'>
         <div className='top'>
@@ -17,6 +17,10 @@ function Weather({data}) {
           <div className='details'>
             <div className='parameter-row'>
               <span className= 'parameter-label'>Details</span>
+            </div>
+            <div className='parameter-row'>
+              <span className= 'parameter-label'>Feels Like</span>
+              <span className= 'parameter-label'> {data?.main.feels_like} °C</span>
             </div>
             <div className='parameter-row'>
               <span className= 'parameter-label'>Feels Like</span>

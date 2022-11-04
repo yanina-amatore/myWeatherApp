@@ -1,3 +1,7 @@
+
+ /* FontAwsome icons */
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,9 +23,9 @@ body {
   border: 1px solid pink;
   max-width: 1080px;
   margin: 20px auto;
-display: flex;
+/* display: flex;
 flex-direction: column;
-justify-content: center
+justify-content: center */
 
 }
 
@@ -99,4 +103,14 @@ justify-content: center
 
 .parameter-label.top {
   border-bottom: 1px solid #fff;
+}
+
+.weather-instructions{
+ border: 1px solid red;
+ text-align: center;
+
+}
+
+.instructions-text{
+  border: 1px solid blue;
 }
