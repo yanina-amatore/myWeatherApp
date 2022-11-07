@@ -5,7 +5,6 @@
 - react (webpack, babel, etc.)
 - react-router-dom
 - express
-- jest
 - eslint
 
 ## Setup
