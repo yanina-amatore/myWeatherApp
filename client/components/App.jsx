@@ -14,10 +14,10 @@ function App() {
 
   const handleOnSearchChange = (searchData) => {
     return getWeatherData(searchData)
-      .then((res) => {
-
-        setWeather({ city: searchData.label, ...res.currentWeather });
-        setForecast({ city: searchData.label, ...res.resForecast });
+      .then((response) => {
+        
+        setWeather({ city: searchData.label, ...response.res.currentWeather });
+        setForecast({ city: searchData.label, ...response.res.resforecast });
         setIsActive(!isActive)
       })
       .catch((err) => {
@@ -52,7 +52,6 @@ function App() {
             </div>
           </div>
         }
-
       </div>
     </div>
   )
