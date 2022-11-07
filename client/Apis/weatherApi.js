@@ -30,9 +30,5 @@ export async function getWeatherData(searchData) {
         }  
       }  
   }
-  console.log('res', res)
-
-  
-
-  return res
+   return res
 }
