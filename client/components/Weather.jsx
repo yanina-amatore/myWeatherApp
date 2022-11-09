@@ -21,16 +21,13 @@ function Weather({data}) {
               <span className= 'parameter-label'>Details</span>
             </div>
             <div className='parameter-row'>
-            <span className= 'parameter-label'> {data?.main.feels_like} °C</span>
+            {/* <span className= 'parameter-label'> {data?.main.feels_like} °C</span> */}
             </div>
             <div className='parameter-row'>
               <span className= 'parameter-label'>Feels Like</span>
               <span className= 'parameter-label'> {data?.main.feels_like} °C</span>
             </div>
-            <div className='parameter-row'>
-              <span className= 'parameter-label'>Feels Like</span>
-              <span className= 'parameter-label'> {data?.main.feels_like} °C</span>
-            </div>
+          
             <div className='parameter-row'>
               <span className= 'parameter-label'>Min Temp</span>
               <span className= 'parameter-label'> {data?.main.temp_min} °C</span>
