@@ -6,8 +6,8 @@ function Weather({data}) {
 
    return (
     <>
-      <div className='weather'>
-        <div className='top'>
+      <div className='card  w-75'  >
+        <div className='card-body'>
           <p className='city'>{data?.city}</p>
           <p className='weather-description'>{data?.weather[0].description}</p>
           <figure>

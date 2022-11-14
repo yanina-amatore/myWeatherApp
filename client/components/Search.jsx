@@ -17,13 +17,18 @@ function Search({ onSearchChange }) {
     onSearchChange(searchData);
   }
   return (
-    <AsyncPaginate
-      placeholder="Search for city"
-      debounceTimeout={600}
-      value={search}
-      onChange={handleOnChange}
-      loadOptions={loadOptions}
-    />
+    <div className='search-container m-3'>      
+      <div className='search-bar'>
+        <AsyncPaginate
+          placeholder="Search for city"
+          debounceTimeout={600}
+          value={search}
+          onChange={handleOnChange}
+          loadOptions={loadOptions}
+        />
+      </div>
+
+    </div>
   )
 }
 

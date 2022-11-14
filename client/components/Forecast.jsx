@@ -24,56 +24,52 @@ function Forecast({ data }) {
 
   return (
     <>
-      <div className='title'>
-        <h1>Forecast </h1>
-        {/*
-          Day
-          Time
-          IMG
-          MIN MAX
-         */}
+      <div style={{border: '1px solid green'}}>
+        <div className='p-1 m-1 d-flex flex-wrap justify-content--around'>
+          {myForecastArray?.map((i, idx) => {
+
+            let newDt = new Date(i.dt_txt)
+            let str = newDt.toString()
+            console.log('str: ', str)
+
+            const date = newDt.getDate()
+            console.log('date: ', date)
+
+            return (
+              <>
+                <div className='card ' key={idx}>
+                  <div className='card-body'>
+                    <p className='card-title'>{city}</p>
+                    {/* icon */}
+                    <figure>
+                      <img alt='weather' className='' src={`../img/${i.weather[0].icon}.png`} />
+                    </figure>
+                  </div>
+                  <div className=''>
+                    <div className=''>
+                      <span className='card-text'> { }</span>
+                    </div>
+                    <div className=''>
+                      <span className='card-subtitle p-3 '> {i.main.feels_like} °C</span>
+                    </div>
+                    <div className=''>
+                      <span className='card-subtitle p-3'> {i.main.temp_min} °C</span>
+                    </div>
+                    <div className=''>
+                      <span className='card-text text-muted p-3'>Humidity</span>
+                      <span className='card-text text-muted p-3'> {i.main.humidity} % </span>
+                    </div>
+
+                  </div>
+                </div>
+              </>
+            )
+          })}
+        </div>
 
       </div>
-      {myForecastArray?.map((i, idx) => {
-        
-        let newDt= new Date(i.dt_txt)
-        let str = newDt.toString()
-         console.log('str: ', str)
-        
-         const date = newDt.getDate()
-         console.log('date: ', date)
-       
-        return (
-          <>
-            <div className='' key={idx}>
-              <div className=''>
-                <p className=''>{city}</p>
-                {/* icon */}
-                <figure>
-                  <img alt='weather' className='' src={`../img/${i.weather[0].icon}.png`} />
-                </figure>
-              </div>
-              <div className=''>              
-                 
-                  <div className=''>
-                    <span className=''> {}</span>
-                  </div>
-                  <div className=''>
-                    <span className=''> {i.main.feels_like} °C</span>
-                  </div>
-                  <div className=''>
-                    <span className=''> {i.main.temp_min} °C</span>
-                  </div>
-                  <div className=''>
-                    <span className=''>Humidity</span>
-                    <span className='parameter-label'> {i.main.humidity} % </span>
-                  </div>
-                
-              </div>
-            </div>
-          </>
-        )
-      })}
+
+
 
     </>
   )

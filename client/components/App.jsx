@@ -15,7 +15,7 @@ function App() {
   const handleOnSearchChange = (searchData) => {
     return getWeatherData(searchData)
       .then((response) => {
-        
+
         setWeather({ city: searchData.label, ...response.res.currentWeather });
         setForecast({ city: searchData.label, ...response.res.resforecast });
         setIsActive(!isActive)
@@ -28,19 +28,24 @@ function App() {
 
   return (
 
-    <div className='app-container'>
+    <div className='container-sm'>
+      <div className='title mt-4 p-2'>
+        <h1> My WeatherApp </h1>
+      </div>
       <div className='search-container'>
         <Search onSearchChange={handleOnSearchChange} />
       </div>
-      <br />
-      <div>
+      <div className=' '>
         {isActive ?
           <div>
-            <div className='weather-container'>
+            <div className='weather-container d-flex justify-content-center my-4'>
               {/* check if we have any data if not don't show anything */}
               {Weather && <Weather data={weather} />}
             </div>
             <div className='forecast-container'>
+              <div className='sub-title mt-2 p-2'>
+                <h2> Forecast </h2>
+              </div>
               {Forecast && <Forecast data={forecast} />}
             </div>
           </div>
