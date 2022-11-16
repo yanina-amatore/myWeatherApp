@@ -29,9 +29,10 @@ function App() {
   return (
 
     <div className='container-sm'>
-      <div className='title mt-4 '>
+      <span className='title mt-4 '>
+      
         <h1 className='fw-lighter p-2'> My WeatherApp </h1>
-      </div>
+      </span>
       <div className='search-container'>
         <Search onSearchChange={handleOnSearchChange} />
       </div>
@@ -50,7 +51,7 @@ function App() {
           <div>
             <div className='weather-instructions d-flex justify-content-center p-3' >
               <i className=" align-self-center fa-solid fa-magnifying-glass mr-2"></i>
-              <span className=' instructions-text'> Enter a city on the search bar</span>
+              <span className=' instructions-text ml-3'> Enter a city on the search bar</span>
             </div>
           </div>
         }
