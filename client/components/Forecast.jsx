@@ -1,63 +1,46 @@
 import React from 'react'
 
 function Forecast({ data }) {
+  
+  const f = data.list
+  
+  // Seelected forecast timestamp
+  const myForecastArray = [f[10],f[12],f[18],f[20],f[22],f[26],f[28],f[30]]
 
-  const city = data.city
-
-
-  const f = data.forecast.list
-  console.log('f: ', f)
-
-  // check the icons for the forecast
-  const myForecastArray = [
-    f[10],
-    f[12],
-    f[14],
-    f[18],
-    f[20],
-    f[22],
-    f[26],
-    f[28],
-    f[30],
-  ]
-  console.log(myForecastArray, 'forecast')
 
   return (
     <>
-      <div style={{border: '1px solid green'}}>
-        <div className='p-1 m-1 d-flex flex-wrap justify-content--around'>
+      <div className='forecast-container'>
+        <div className='card-map'>
           {myForecastArray?.map((i, idx) => {
 
             let newDt = new Date(i.dt_txt)
-            let str = newDt.toString()
-            console.log('str: ', str)
+            let str = newDt.toString().split(' ')
 
-            const date = newDt.getDate()
-            console.log('date: ', date)
+            const newDate = ([str[0], str[1], str[2]]).join(" ")
+            const time = ([str[4]])
 
             return (
               <>
-                <div className='card ' key={idx}>
-                  <div className='card-body'>
-                    <p className='card-title'>{city}</p>
+                <div key={idx} className='cards p-4' style={{ width: "1,8rem" }} >
+                  <div  key={idx}  className='card-body'>
+                    <div >
+                      <span className='fs-3 px-2'>{newDate} - </span>
+                      <span className='fs-3 '>{time}</span>
+                    </div>
                     {/* icon */}
-                    <figure>
-                      <img alt='weather' className='' src={`../img/${i.weather[0].icon}.png`} />
-                    </figure>
+                    <img alt='weather' src={`../img/${i.weather[0].icon}.png`} />
                   </div>
-                  <div className=''>
-                    <div className=''>
-                      <span className='card-text'> { }</span>
+                  <div >
+                    <div >
+                      <span className='p-4 fs-5 '> {i.main.feels_like} °C</span>
                     </div>
-                    <div className=''>
-                      <span className='card-subtitle p-3 '> {i.main.feels_like} °C</span>
+                    <div >
+                      <span className=' p-4 fs-5' > {i.main.temp_min} °C</span>
                     </div>
-                    <div className=''>
-                      <span className='card-subtitle p-3'> {i.main.temp_min} °C</span>
-                    </div>
-                    <div className=''>
-                      <span className='card-text text-muted p-3'>Humidity</span>
-                      <span className='card-text text-muted p-3'> {i.main.humidity} % </span>
+                    <div >
+                      <span className='text-muted p-4 fs-5'>Humidity</span>
+                      <span className=' text-muted p-4'> {i.main.humidity} % </span>
                     </div>
 
                   </div>
