@@ -1,0 +1,45 @@
+/*!*******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./client/styles/index.scss ***!
+  \*******************************************************************************************************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  background-color: #faf8f1;
+  color: #0a1520;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Weather component */
+.card-map {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+}
+
+.cards {
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast-container {
+  display: grid;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=styles.css.map*/

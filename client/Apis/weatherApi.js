@@ -14,21 +14,12 @@ export async function getWeatherData(searchData) {
   )
   const forecast = resForecast.body
   const currentWeather = resWeather.body
-  
-  const dateTime = forecast.list.map((item) => {
-    return {
-      dateTime: item.dt_txt,
-    }
-  })
-  const res = { 
-    res:{
-      currentWeather: currentWeather,
-         resforecast:{
-          forecast: forecast,
-          dateTime: dateTime,
 
-        }  
-      }  
+  const res = {
+    res: {
+      currentWeather: currentWeather,
+      forecast: forecast,
+    },
   }
-   return res
+  return res
 }
