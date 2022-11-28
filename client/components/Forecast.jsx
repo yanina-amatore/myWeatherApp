@@ -7,7 +7,6 @@ function Forecast({ data }) {
   // Seelected forecast timestamp
   const myForecastArray = [f[10],f[12],f[18],f[20],f[22],f[26],f[28],f[30]]
 
-
   return (
     <>
       <div className='forecast-container'>
@@ -42,18 +41,13 @@ function Forecast({ data }) {
                       <span className='text-muted p-4 fs-5'>Humidity</span>
                       <span className=' text-muted p-4'> {i.main.humidity} % </span>
                     </div>
-
                   </div>
                 </div>
               </>
             )
           })}
         </div>
-
       </div>
-
-
-
     </>
   )
 }
