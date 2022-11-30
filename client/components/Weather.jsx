@@ -12,7 +12,7 @@ function Weather({data}) {
     <img alt='weather' className='weather-icon' src={`../img/${data?.weather[0].icon}.png`} />
     </div>
     <div className="col-md-8">
-      <div className="card-body">
+      <div className="card-body bg-white">
         <h5 className="card-title">{data?.city}</h5>
         <p className='card-text fs-5'>{data?.main.temp} °C</p>
         <p className='card-text text-capitalize '>{data?.weather[0].description}</p>
