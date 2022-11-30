@@ -15,7 +15,6 @@ function App() {
   const handleOnSearchChange = (searchData) => {
     return getWeatherData(searchData)
       .then((response) => {
-
         setWeather({ city: searchData.label, ...response.res.currentWeather });
         setForecast({ city: searchData.label, ...response.res.forecast });
         setIsActive(!isActive)
@@ -28,22 +27,23 @@ function App() {
 
   return (
 
-    <div className='container-sm'>
-      <span className='title mt-4 '>
-      
-        <h1 className='fw-lighter p-2'> My WeatherApp </h1>
+    <div className='container-sm bg-light'>
+      <span className='m-4 text-primary' >
+        
+        <h1 className='title my-3 font-monospace'><i className="fa-solid fa-umbrella mx-3"></i>My WeatherApp </h1>
+        
       </span>
       <div className='search-container'>
         <Search onSearchChange={handleOnSearchChange} />
       </div>
-      <div className=' '>
+      <div className=''>
         {isActive ?
           <div>
             <div className='weather-container d-flex justify-content-center my-4'>
               {/* check if we have any data if not don't show anything */}
               {Weather && <Weather data={weather} />}
             </div>
-            <div className='forecast-container'>              
+            <div className='forecast-container'>
               {Forecast && <Forecast data={forecast} />}
             </div>
           </div>
@@ -51,7 +51,7 @@ function App() {
           <div>
             <div className='weather-instructions d-flex justify-content-center p-3' >
               <i className=" align-self-center fa-solid fa-magnifying-glass mr-2"></i>
-              <span className=' instructions-text ml-3'> Enter a city on the search bar</span>
+              <span className='lead m-3'> Enter a city on the search bar</span>
             </div>
           </div>
         }

@@ -18,7 +18,7 @@ function Search({ onSearchChange }) {
   }
   return (
     <div className='search-container m-3'>      
-      <div className='search-bar'>
+      <div  data-testid="search-bar" className='search-bar'>
         <AsyncPaginate
           placeholder="Search for city"
           debounceTimeout={600}
@@ -27,7 +27,6 @@ function Search({ onSearchChange }) {
           loadOptions={loadOptions}
         />
       </div>
-
     </div>
   )
 }

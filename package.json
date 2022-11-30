@@ -1,7 +1,7 @@
 {
   "name": "react-boilerplate",
   "version": "0.2.0",
-  "description": "React!",
+  "description": "My WeatherApp",
   "repository": "https://github.com/dev-academy-challenges/react-boilerplate.git",
   "main": "server/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "server": "node server",
     "client:watch": "npm run webpack -- --watch",
     "server:watch": "nodemon server",
-    "test": "jest --watch --noStackTrace",
+    "test": "jest --watchAll --verbose",
     "lint": "eslint --ext .js,.jsx ."
   },
   "babel": {
@@ -36,6 +36,9 @@
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.17.12",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "babel-loader": "^8.2.2",
     "eslint": "^8.10.0",
     "eslint-config-eda": "^1.2.0",
@@ -47,7 +50,9 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.29.4",
     "jest": "^27.5.1",
+    "jest-environment-jsdom": "^27.1.1",
     "mini-css-extract-plugin": "^2.6.1",
+    "nock": "^13.2.9",
     "node-sass": "^7.0.3",
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
@@ -61,6 +66,7 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.10.2",
     "css-loader": "^6.7.2",
     "dotenv": "^16.0.3",
     "dotenv-webpack": "^8.0.1",
@@ -68,6 +74,16 @@
     "react-select": "^5.5.9",
     "react-select-async-paginate": "^0.7.0",
     "superagent": "7.1.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testEnvironmentOptions": {
+      "browsers": [
+        "chrome",
+        "firefox",
+        "safari"
+      ]
+    }
   },
   "prettier": {
     "semi": false,
