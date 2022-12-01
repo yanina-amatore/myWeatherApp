@@ -14,7 +14,7 @@ html {
 
 body {
   color: #0a1520;
-  font-family: "Poppins", sans-serif;
+  font-family: "Oswald", sans-serif !important;
 }
 
 /* Weather component */
@@ -39,6 +39,14 @@ body {
 .forecast-container {
   display: grid;
   justify-content: center;
+}
+
+.weather-instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
 }
 
 /*# sourceMappingURL=styles.css.map*/

@@ -31,15 +31,16 @@ function Forecast({ data }) {
                 <div
                   key={idx}
                   className="cards p-4 bg-white"
-                  style={{ width: '1,8rem' }}
+                  style={{ width: '1,6rem' }}
                 >
                   <div key={idx} className="card-body">
                     <div>
-                      <span className="fs-3 px-2">
-                        <b>{newDate}</b>{' '}
-                      </span>
-                      <span className="fs-3 ">{time}</span>
+                      <p className="fs-3 text-center ">
+                      <b>{newDate}</b>
+                      </p>
+                      <p className="fs-3 text-center">{time}</p>
                     </div>
+                    <hr/>
                   </div>
                   <figure className='d-flex justify-content-center'>
                     <img
@@ -52,7 +53,7 @@ function Forecast({ data }) {
                     <div>
                       <i className="fa-solid fa-temperature-arrow-up text-danger"></i>
 
-                      <span className="p-4 fs-5 "> {i.main.feels_like} °C</span>
+                      <span className="p-4 fs-5 "> {i.main.temp_max} °C</span>
                     </div>
                     <div>
                       <i className="fa-solid fa-temperature-arrow-down text-primary"></i>
