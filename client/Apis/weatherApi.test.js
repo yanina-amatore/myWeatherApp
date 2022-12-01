@@ -3,7 +3,7 @@ import{ WEATHER_API_URL} from './weatherApi'
 
 import {getWeatherData }from './weatherApi'
 
-// Failing ATM 
+// I'm practicing unir test Yay!!! -- Failing ATM  :(
 
 
 describe('getWeatherData', () => {

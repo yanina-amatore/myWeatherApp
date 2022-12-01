@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Weather({ data }) {
-  console.log( 'data', data)
+ 
 
   return (
     <>
@@ -47,9 +47,7 @@ function Weather({ data }) {
                 <span className="card-text text-secondary">Wind: </span>
                 <span className="card-text"> {data?.wind.speed} hPa </span>
               </div>
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
+              
             </div>
           </div>
         </div>

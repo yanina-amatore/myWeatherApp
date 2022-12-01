@@ -16,7 +16,7 @@ export async function getWeatherData(searchData) {
   const resForecast = await request.get(
     `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${process.env.WEATHER_API_KEY}&units=metric`
     )
-    console.log('resF', resForecast)
+
   const forecast = resForecast.body
   const currentWeather = resWeather.body
 
@@ -26,6 +26,6 @@ export async function getWeatherData(searchData) {
       forecast: forecast,
     },
   }
-  console.log('res', res)
+  // console.log('res', res)
   return res
 }
