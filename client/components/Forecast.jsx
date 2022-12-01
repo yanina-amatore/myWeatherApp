@@ -31,7 +31,7 @@ function Forecast({ data }) {
                 <div
                   key={idx}
                   className="cards p-4 bg-white"
-                  style={{ width: '1,8rem' }}
+                  style={{ width: '1,6rem' }}
                 >
                   <div key={idx} className="card-body">
                     <div>

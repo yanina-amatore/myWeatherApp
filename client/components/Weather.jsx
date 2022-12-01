@@ -6,14 +6,14 @@ function Weather({data}) {
 
    return (
     <>
-    <div className="card mb-3" style={{maxWidth: "540px"}}>
+    <div className="card mb-3" style={{maxWidth: "800px"}}>
   <div className="row g-0">
     <div className="col-md-4">
     <img alt='weather' className='weather-icon' src={`../img/${data?.weather[0].icon}.png`} />
     </div>
     <div className="col-md-8">
       <div className="card-body bg-white">
-        <h5 className="card-title">{data?.city}</h5>
+        <h5 className="card-title">{data?.name}</h5>
         <p className='card-text fs-5'>{data?.main.temp} °C</p>
         <p className='card-text text-capitalize '>{data?.weather[0].description}</p>
        
