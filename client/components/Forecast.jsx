@@ -7,6 +7,7 @@ function Forecast({ data }) {
   const myForecastArray = [
     f[10],
     f[12],
+    f[14],
     f[18],
     f[20],
     f[22],
@@ -34,10 +35,10 @@ function Forecast({ data }) {
               >
                 <div className="card-body">
                   <div>
-                    <p className="fs-3 text-center ">
+                    <p className="fs-3 text-center text-primary ">
                       <b>{newDate}</b>
                     </p>
-                    <p className="fs-3 text-center">{time}</p>
+                    <p className="fs-3 text-center text-secondary">{time}</p>
                   </div>
                   <hr />
                 </div>
@@ -59,11 +60,8 @@ function Forecast({ data }) {
                     <span className=" p-4 fs-5"> {i.main.temp_min} °C</span>
                   </div>
                   <div className="py-3">
-                    <span className="text-muted  ">Humidity</span>
-                    <span className=" text-muted p-4">
-                      {' '}
-                      {i.main.humidity} %{' '}
-                    </span>
+                    <span className="text-muted fs-5 ">Humidity</span>
+                    <span className=" text-muted  fs-5"> {i.main.humidity} % </span>
                   </div>
                 </div>
               </div>
