@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Weather({ data }) {
-  console.log(data, 'data')
+  console.log( 'data', data)
 
   return (
     <>
