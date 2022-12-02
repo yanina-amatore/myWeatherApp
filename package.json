@@ -14,8 +14,7 @@
     "test": "jest --watchAll --verbose",
     "lint": "eslint --ext .js,.jsx .",
     "build": "run-p build:client",
-    "build:client": "npm run webpack -- --mode production",
-
+    "build:client": "npm run webpack -- --mode production"
   },
   "babel": {
     "presets": [
