@@ -13,9 +13,9 @@
     "server:watch": "nodemon server",
     "test": "jest --watchAll --verbose",
     "lint": "eslint --ext .js,.jsx .",
-    "build": "run-p build:client build:server",
+    "build": "run-p build:client",
     "build:client": "npm run webpack -- --mode production",
-    "build:server": "npm run knex -- migrate:latest"
+
   },
   "babel": {
     "presets": [
