@@ -1,8 +1,9 @@
 
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 // for .env file
-// const Dotenv = require('dotenv-webpack')
+const Dotenv = require('dotenv-webpack')
 const webpack = require('webpack')
 
 module.exports = {
@@ -11,6 +12,7 @@ module.exports = {
     path: path.join(__dirname, '../server/public'),
     filename: 'bundle.js',
   },
+
   mode: 'development',
   plugins: [
     new MiniCssExtractPlugin({
@@ -20,12 +22,16 @@ module.exports = {
     }),
 
     // for .env file
-    // new Dotenv({
-    //   path: path.join(__dirname, '../.env'),
-    // }),
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
-      DEBUG: false,
+    new Dotenv({
+      path: path.join(__dirname, '../.env'),
+    }),
+    new webpack.DefinePlugin({
+      'process.env.CITIES_KEY': JSON.stringify(
+        process.env.CITIES_KEY
+      ),
+      'process.env.WEATHER_API_KEY': JSON.stringify(
+        process.env.WEATHER_API_KEY
+      ),
     })
   ],
   module: {
