@@ -1,8 +1,6 @@
-
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-// for .env file
 // const Dotenv = require('dotenv-webpack')
 const webpack = require('webpack')
 
@@ -21,17 +19,14 @@ module.exports = {
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
 
-    // for .env file
+  
     // new Dotenv({
     //   path: path.join(__dirname, '../.env'),
     // }),
+    
     new webpack.DefinePlugin({
-      'process.env.CITIES_KEY': JSON.stringify(
-        process.env.CITIES_KEY
-      ),
-      'process.env.WEATHER_API_KEY': JSON.stringify(
-        process.env.WEATHER_API_KEY
-      ),
+      'process.env.CITIES_KEY': JSON.stringify(process.env.CITIES_KEY),
+      'process.env.WEATHER_API_KEY': JSON.stringify(process.env.WEATHER_API_KEY),
     })
   ],
   module: {
