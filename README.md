@@ -1,11 +1,18 @@
 # My Weather App
 
+## Latest deployed version
+
+Please find the latest deployed version URL below:
+
+<a href="https://https://myweatherapp.up.railway.app//" target="_blank">www.myweatherapp.up.railway.app</a>
+
 ## Tech
 
-- react (webpack, babel, etc.)
-- react-router-dom
-- express
-- eslint
+- React (webpack, babel, etc.)
+- React-router-dom
+- Express
+- Eslint
+- Rest APIs
 
 ## Setup
 
