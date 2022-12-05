@@ -2,7 +2,8 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // for .env file
-const Dotenv = require('dotenv-webpack')
+// const Dotenv = require('dotenv-webpack')
+const webpack = require('webpack')
 
 module.exports = {
   entry: ['./client/index.js', './client/styles/index.scss'],
@@ -19,9 +20,13 @@ module.exports = {
     }),
 
     // for .env file
-    new Dotenv({
-      path: path.join(__dirname, '../.env'),
-    }),
+    // new Dotenv({
+    //   path: path.join(__dirname, '../.env'),
+    // }),
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
+      DEBUG: false,
+    })
   ],
   module: {
     rules: [
