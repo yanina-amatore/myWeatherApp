@@ -4,8 +4,8 @@ export const GEO_API_URL = 'https://wft-geo-db.p.rapidapi.com/v1/geo'
 export const geoApiOptions = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': '3d6373a80emshf5e1bbcda5e38fep1757adjsna98c528e0171',
-    // 'X-RapidAPI-Key': `${process.env.CITIES_KEY}`,
+ 
+    'X-RapidAPI-Key': `{process.env.CITIES_KEY}`,
     'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
   }
 };
