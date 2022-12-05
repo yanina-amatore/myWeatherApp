@@ -3,7 +3,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // for .env file
-const Dotenv = require('dotenv-webpack')
+// const Dotenv = require('dotenv-webpack')
 const webpack = require('webpack')
 
 module.exports = {
@@ -22,9 +22,9 @@ module.exports = {
     }),
 
     // for .env file
-    new Dotenv({
-      path: path.join(__dirname, '../.env'),
-    }),
+    // new Dotenv({
+    //   path: path.join(__dirname, '../.env'),
+    // }),
     new webpack.DefinePlugin({
       'process.env.CITIES_KEY': JSON.stringify(
         process.env.CITIES_KEY
