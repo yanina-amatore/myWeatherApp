@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Weather({ data }) {
+  console.log('data', data)
   return (
     <>
       <div className='weather-section' id='weather-section'>
@@ -24,7 +25,7 @@ function Weather({ data }) {
               <div className="col-md-8">
                 <div className="card-body bg-white">
                   <h5 className="card-title fw-semibold fs-3 text-primary">
-                    {data?.name}
+                    {data?.city}
                   </h5>
                   <p className="card-text fs-5 text-secondary">
                     {data?.main.temp} °C
