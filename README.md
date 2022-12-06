@@ -1,5 +1,9 @@
 # My Weather App
 
+## Update:
+I've deployed a first version of the App but v2 it's still in the works. 
+
+
 ## Latest deployed version
 
 Please find the latest deployed version URL below:
