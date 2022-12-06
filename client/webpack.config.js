@@ -1,8 +1,8 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-// const Dotenv = require('dotenv-webpack')
-const webpack = require('webpack')
+const Dotenv = require('dotenv-webpack')
+// const webpack = require('webpack')
 
 module.exports = {
   entry: ['./client/index.js', './client/styles/index.scss'],
@@ -20,14 +20,14 @@ module.exports = {
     }),
 
   
-    // new Dotenv({
-    //   path: path.join(__dirname, '../.env'),
-    // }),
+    new Dotenv({
+      path: path.join(__dirname, '../.env'),
+    }),
     
-    new webpack.DefinePlugin({
-      'process.env.CITIES_KEY': JSON.stringify(process.env.CITIES_KEY),
-      'process.env.WEATHER_API_KEY': JSON.stringify(process.env.WEATHER_API_KEY),
-    })
+    // new webpack.DefinePlugin({
+    //   'process.env.CITIES_KEY': JSON.stringify(process.env.CITIES_KEY),
+    //   'process.env.WEATHER_API_KEY': JSON.stringify(process.env.WEATHER_API_KEY),
+    // })
   ],
   module: {
     rules: [

@@ -46,8 +46,13 @@ body {
   justify-content: center;
 }
 
-.weather-instructions{
+.weather-section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
+.weather-instructions{
   display: flex ;
   flex-direction: column;
   justify-content: center;

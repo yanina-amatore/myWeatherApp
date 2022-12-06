@@ -19,6 +19,8 @@ function Forecast({ data }) {
   return (
     <>
       <div className="forecast-container">
+        <div className="forecast-title my-3 text-center fs-3 text-secondary">Forecast for next 3 days</div>
+       <hr/>
         <div className="card-map">
           {myForecastArray?.map((i, idx) => {
             let newDt = new Date(i.dt_txt)
@@ -68,6 +70,7 @@ function Forecast({ data }) {
             )
           })}
         </div>
+        <a className='text-center fs-4 p-3 m-3' href='#top'><i className="fa-solid fa-arrow-up fa-l m-2 text-primary"></i>Back</a>
       </div>
     </>
   )

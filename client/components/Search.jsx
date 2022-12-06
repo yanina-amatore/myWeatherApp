@@ -17,7 +17,7 @@ function Search({ onSearchChange }) {
     onSearchChange(searchData);
   }
   return (
-    <div className='search-container m-3'>      
+    <div className='search-container m-3' id='search-bar'>      
       <div  data-testid="search-bar" className='search-bar'>
         <AsyncPaginate
           placeholder="Search for city"
