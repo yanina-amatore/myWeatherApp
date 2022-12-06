@@ -24,7 +24,7 @@ function Main() {
   }
 
   return (
-    <section className="main">
+    <section className="main" id='top'>
       <div>
         <h1 className="text-primary   font-monospac mb-4 ps-3 ">
           My WeatherApp <i className="fa-solid fa-wind"></i>

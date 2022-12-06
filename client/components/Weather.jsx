@@ -3,15 +3,15 @@ import React from 'react'
 function Weather({ data }) {
   return (
     <>
-    <div>
-      {/* <div className="instructions d-flex flex-column justify-content-center">
-        
-          <p className="text-secondary px-3 fs-6">
-            
-            Click on the search bar again to check the weather in a different city
-          </p> */}
-
-        <div className="">
+      <div className='weather-section' id='weather-section'>
+        <div className="instructions mb-3 ">
+          <p className=" px-3 fs-6">
+          <i className="fa-solid fa-magnifying-glass fa-l mx-1 text-primary"></i>
+            Click on the search bar for a <b>different
+            city</b>.
+          </p>
+        </div>
+        <div className='align-self-center'>
           <div className="card mb-3 p-3 " style={{ maxWidth: '350px' }}>
             <div className="row g-0">
               <div className="col-md-4">
