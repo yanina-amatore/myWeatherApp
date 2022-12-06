@@ -9,7 +9,6 @@ Please find the latest deployed version URL below:
 ## Tech
 
 - React (webpack, babel, etc.)
-- React-router-dom
 - Express
 - Eslint
 - Rest APIs
