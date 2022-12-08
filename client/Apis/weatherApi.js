@@ -2,12 +2,12 @@
 const axios = require ('axios')
 
 
-export async function getWeatherData(lat, lon, secret) {
+export async function getWeatherData(lat, lon) {
 
   const options = {
     method: 'GET',
     url: '/weather',
-    params: {latitud: lat, longitud: lon, key:secret},
+    params: {latitud: lat, longitud: lon},
 }
 
    return axios.request(options)

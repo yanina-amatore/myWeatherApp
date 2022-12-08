@@ -12,11 +12,13 @@ import Footer from './Footer'
   const [isActive, setIsActive] = useState(false)
 
   const handleOnSearchChange = async (searchData) => {
-
+    
     const lat = searchData.value.lat
     const lon = searchData.value.lon
+    console.log('searchData', lat, lon)
     
-    return getWeatherData(lat,lon, process.env.WEATHER_API_KEY)
+    
+    return getWeatherData(lat,lon)
       .then((response) => {
         console.log ('main', response)
         setWeather({ city: searchData.label, ...response.weatherNow })
