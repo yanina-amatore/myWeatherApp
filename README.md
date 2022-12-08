@@ -15,7 +15,8 @@ Please find the latest deployed version URL below:
 - React (webpack, babel, etc.)
 - Express
 - Eslint
-- Rest APIs
+- Rest API
+- Axios
 
 ## Setup
 
