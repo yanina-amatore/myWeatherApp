@@ -35,10 +35,8 @@ server.get(`/weather`, async (req,res) => {
      const respWeather = responses[0]
      const respForecast = responses[1]
      const data = {
-      resp:{
         weatherNow: respWeather.data,
-        forecast: respForecast.data
-      }
+        forecast: respForecast.data      
      }
     
      res.json(data)

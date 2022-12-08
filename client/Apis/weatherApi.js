@@ -10,18 +10,12 @@ export async function getWeatherData(lat, lon, secret) {
     params: {latitud: lat, longitud: lon, key:secret},
 }
 
-axios.request(options).then((response) => {
-  const dataApi= response.data
-  return dataApi
-
-})
-.catch((error) => {
-    console.error('opps', error)
-})
-
-
+   return axios.request(options)
+    .then( (response) => {
+      return response.data
+    })
+    .catch((error) => {
+      console.error('opps', error)
+    })    
+  
 }
-
-//querystring
-
-//REST
