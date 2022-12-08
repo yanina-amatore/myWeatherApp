@@ -6,16 +6,21 @@ import { getWeatherData } from '../Apis/weatherApi'
 import Carousel from './Carousel'
 import Footer from './Footer'
 
-function Main() {
+ function Main() {
   const [weather, setWeather] = useState(null)
   const [forecast, setForecast] = useState(null)
   const [isActive, setIsActive] = useState(false)
 
-  const handleOnSearchChange = (searchData) => {
-    return getWeatherData(searchData)
+  const handleOnSearchChange = async (searchData) => {
+
+    const lat = searchData.value.lat
+    const lon = searchData.value.lon
+    
+    return getWeatherData(lat,lon, process.env.WEATHER_API_KEY)
       .then((response) => {
-        setWeather({ city: searchData.label, ...response.res.currentWeather })
-        setForecast({ city: searchData.label, ...response.res.forecast })
+        console.log ('main', response)
+        setWeather({ city: searchData.label, ...response.weatherNow })
+        setForecast({ city: searchData.label, ...response.forecast })
         setIsActive(!isActive)
       })
       .catch((err) => {

@@ -1,33 +1,27 @@
-import request from 'superagent'
+
+const axios = require ('axios')
 
 
-export const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5'
+export async function getWeatherData(lat, lon, secret) {
 
-export async function getWeatherData(searchData) {
-
-  const lat = searchData.value.lat
-  const lon = searchData.value.lon
-
-  const key = process.env.WEATHER_API_KEY
-  
-  // API to get Weather data
-  const resWeather = await request.get(
-    `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
-  )
-   // API to get Forecast data
-  const resForecast = await request.get(
-    `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
-    )
-
-  const forecast = resForecast.body
-  const currentWeather = resWeather.body
-
-  const res = {
-    res: {
-      currentWeather: currentWeather,
-      forecast: forecast,
-    },
-  }
-  // console.log('res', res)
-  return res
+  const options = {
+    method: 'GET',
+    url: '/weather',
+    params: {latitud: lat, longitud: lon, key:secret},
 }
+
+axios.request(options).then((response) => {
+  const dataApi= response.data
+  return dataApi
+
+})
+.catch((error) => {
+    console.error('opps', error)
+})
+
+
+}
+
+//querystring
+
+//REST
