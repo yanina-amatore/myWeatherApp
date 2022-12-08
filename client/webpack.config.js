@@ -22,7 +22,7 @@ module.exports = {
   
     // new Dotenv({
     //   path: path.join(__dirname, '../.env'),
-    // }),
+    // })
     
     new webpack.DefinePlugin({
       'process.env.CITIES_KEY': JSON.stringify(process.env.CITIES_KEY),
