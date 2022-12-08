@@ -2,6 +2,7 @@ import React from 'react'
 
 function Forecast({ data }) {
   const f = data.list
+  console.log('Forecast', f)
 
   // Seelected forecast timestamp
   const myForecastArray = [
@@ -51,19 +52,23 @@ function Forecast({ data }) {
                     src={`../img/${i.weather[0].icon}.png`}
                   />
                 </figure>
+                <p className="card-text text-capitalize text-primary fst-italic  ">
+                    {i.weather[0].description}
+                  </p>
+
                 <div>
                   <div>
                     <i className="fa-solid fa-temperature-arrow-up text-danger"></i>
 
-                    <span className="p-4 fs-5 "> {i.main.temp_max} °C</span>
+                    <span className="p-4 fs-5 "> {Math.round(i.main.temp_max)} °C</span>
                   </div>
                   <div>
                     <i className="fa-solid fa-temperature-arrow-down text-primary"></i>
-                    <span className=" p-4 fs-5"> {i.main.temp_min} °C</span>
+                    <span className=" p-4 fs-5"> {Math.round(i.main.temp_min)} °C</span>
                   </div>
                   <div className="py-3">
                     <span className="text-muted fs-5 ">Humidity</span>
-                    <span className=" text-muted  fs-5"> {i.main.humidity} % </span>
+                    <span className=" text-muted  fs-5"> {Math.round(i.main.humidity)} % </span>
                   </div>
                 </div>
               </div>

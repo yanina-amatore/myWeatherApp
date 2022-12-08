@@ -28,7 +28,7 @@ function Weather({ data }) {
                     {data?.city}
                   </h5>
                   <p className="card-text fs-5 text-secondary">
-                    {data?.main.temp} °C
+                    {Math.round(data?.main.temp)} °C
                   </p>
                   <p className="card-text text-capitalize text-primary fst-italic  ">
                     {data?.weather[0].description}
@@ -36,16 +36,16 @@ function Weather({ data }) {
 
                   <div className="">
                     <span className="card-text text-secondary">Feels Like: </span>
-                    <span className="card-text"> {data?.main.feels_like} °C</span>
+                    <span className="card-text"> {Math.round(data?.main.feels_like)} °C</span>
                   </div>
 
                   <div className="">
                     <span className="card-text text-secondary">Min Temp: </span>
-                    <span className="card-text"> {data?.main.temp_min} °C</span>
+                    <span className="card-text"> {Math.round(data?.main.temp_min)} °C</span>
                   </div>
                   <div className="">
                     <span className="card-text text-secondary">Max Temp: </span>
-                    <span className="card-text"> {data?.main.temp_max} °C</span>
+                    <span className="card-text"> {Math.round(data?.main.temp_max)} °C</span>
                   </div>
                   <div className="">
                     <span className="card-text text-secondary">Humidity: </span>
