@@ -15,12 +15,10 @@ import Footer from './Footer'
     
     const lat = searchData.value.lat
     const lon = searchData.value.lon
-    console.log('searchData', lat, lon)
     
-    
+
     return getWeatherData(lat,lon)
-      .then((response) => {
-        console.log ('main', response)
+      .then((response) => {    
         setWeather({ city: searchData.label, ...response.weatherNow })
         setForecast({ city: searchData.label, ...response.forecast })
         setIsActive(!isActive)
@@ -51,7 +49,7 @@ import Footer from './Footer'
               {Forecast && <Forecast data={forecast} />}
             </div>
           </div>
-        ) : (
+        ) : ( 
           <div >
             <div className="weather-instructions">
               <span className="m-3 text-center fs-5">
@@ -64,7 +62,7 @@ import Footer from './Footer'
               </div>
             </div>
           </div>
-        )}
+         )} 
       </div>
       <Footer/>
     </section>

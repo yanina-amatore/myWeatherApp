@@ -15,6 +15,7 @@ function Search({ onSearchChange }) {
   const handleOnChange = (searchData) => {
     setSearch(searchData);
     onSearchChange(searchData);
+    setSearch('');
   }
   return (
     <div className='search-container m-3' id='search-bar'>      
