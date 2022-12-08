@@ -5,6 +5,7 @@ const express = require('express')
 const axios = require('axios')
 const server = express()
 
+require('dotenv').config()
 
 server.use(express.json())
 server.use(express.static(path.join('server', 'public')))
