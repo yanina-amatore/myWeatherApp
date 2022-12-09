@@ -2,9 +2,8 @@ import React from 'react'
 
 function Forecast({ data }) {
   const f = data.list
-  console.log('Forecast', f)
 
-  // Seelected forecast timestamp
+  // Selected forecast timestamp
   const myForecastArray = [
     f[10],
     f[12],
@@ -20,8 +19,10 @@ function Forecast({ data }) {
   return (
     <>
       <div className="forecast-container">
-        <div className="forecast-title my-3 text-center fs-3 text-secondary">Forecast for next 3 days</div>
-       <hr/>
+        <div className="forecast-title my-3 text-center fs-3 text-secondary">
+          Forecast for next 3 days
+        </div>
+        <hr />
         <div className="card-map">
           {myForecastArray?.map((i, idx) => {
             let newDt = new Date(i.dt_txt)
@@ -53,29 +54,40 @@ function Forecast({ data }) {
                   />
                 </figure>
                 <p className="card-text text-capitalize text-primary fst-italic  ">
-                    {i.weather[0].description}
-                  </p>
+                  {i.weather[0].description}
+                </p>
 
                 <div>
                   <div>
                     <i className="fa-solid fa-temperature-arrow-up text-danger"></i>
 
-                    <span className="p-4 fs-5 "> {Math.round(i.main.temp_max)} °C</span>
+                    <span className="p-4 fs-5 ">
+                      {' '}
+                      {Math.round(i.main.temp_max)} °C
+                    </span>
                   </div>
                   <div>
                     <i className="fa-solid fa-temperature-arrow-down text-primary"></i>
-                    <span className=" p-4 fs-5"> {Math.round(i.main.temp_min)} °C</span>
+                    <span className=" p-4 fs-5">
+                      {' '}
+                      {Math.round(i.main.temp_min)} °C
+                    </span>
                   </div>
                   <div className="py-3">
                     <span className="text-muted fs-5 ">Humidity</span>
-                    <span className=" text-muted  fs-5"> {Math.round(i.main.humidity)} % </span>
+                    <span className=" text-muted  fs-5">
+                      {' '}
+                      {Math.round(i.main.humidity)} %{' '}
+                    </span>
                   </div>
                 </div>
               </div>
             )
           })}
         </div>
-        <a className='text-center fs-4 p-3 m-3' href='#top'><i className="fa-solid fa-arrow-up fa-l m-2 text-primary"></i>Back</a>
+        <a className="text-center fs-4 p-3 m-3" href="#top">
+          <i className="fa-solid fa-arrow-up fa-l m-2 text-primary"></i>Back
+        </a>
       </div>
     </>
   )

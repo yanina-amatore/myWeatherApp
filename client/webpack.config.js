@@ -1,7 +1,7 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-// const Dotenv = require('dotenv-webpack')
+
 const webpack = require('webpack')
 
 module.exports = {
@@ -19,10 +19,6 @@ module.exports = {
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
 
-  
-    // new Dotenv({
-    //   path: path.join(__dirname, '../.env'),
-    // })
     
     new webpack.DefinePlugin({
       'process.env.CITIES_KEY': JSON.stringify(process.env.CITIES_KEY),
