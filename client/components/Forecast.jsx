@@ -2,18 +2,19 @@ import React from 'react'
 
 function Forecast({ data }) {
   const f = data.list
+  console.log('forecast', f)
 
   // Selected forecast timestamp
   const myForecastArray = [
-    f[10],
-    f[12],
-    f[14],
-    f[18],
-    f[20],
-    f[22],
-    f[26],
-    f[28],
-    f[30]
+    f[9],
+    f[11],
+    f[13],
+    f[17],
+    f[19],
+    f[21],
+    f[25],
+    f[27],
+    f[29]
   ]
 
   return (
@@ -46,6 +47,12 @@ function Forecast({ data }) {
                   </div>
                   <hr />
                 </div>
+                  <div >
+                    <span className="p-4 fs-3 text-centered">
+                      {Math.round(i.main.temp)} °C
+                      <i className="fa-solid fa-temperature-half ms-3 "></i>
+                    </span>
+                  </div>
                 <figure className="d-flex justify-content-center">
                   <img
                     className="text-center"
@@ -53,31 +60,17 @@ function Forecast({ data }) {
                     src={`../img/${i.weather[0].icon}.png`}
                   />
                 </figure>
-                <p className="card-text text-capitalize text-primary fst-italic  ">
+                <p className="card-text text-capitalize text-primary fst-italic fs-5 ">
                   {i.weather[0].description}
                 </p>
-
                 <div>
-                  <div>
-                    <i className="fa-solid fa-temperature-arrow-up text-danger"></i>
-
-                    <span className="p-4 fs-5 ">
-                      {' '}
-                      {Math.round(i.main.temp_max)} °C
+                  <div className='py-4'>
+                    <span className="text-muted fs-5 text-centered">
+                      {Math.round(i.main.feels_like)}°C Feels like 
                     </span>
-                  </div>
-                  <div>
-                    <i className="fa-solid fa-temperature-arrow-down text-primary"></i>
-                    <span className=" p-4 fs-5">
-                      {' '}
-                      {Math.round(i.main.temp_min)} °C
-                    </span>
-                  </div>
-                  <div className="py-3">
-                    <span className="text-muted fs-5 ">Humidity</span>
-                    <span className=" text-muted  fs-5">
-                      {' '}
-                      {Math.round(i.main.humidity)} %{' '}
+                    <br/>                    
+                    <span className=" text-muted  fs-5 text-centered">
+                      {Math.round(i.main.humidity)} %  Humidity 
                     </span>
                   </div>
                 </div>
