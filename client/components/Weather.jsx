@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Weather({ data }) {
-
+console.log('data', data)
   return (
     <>
       <div className='weather-section' id='weather-section'>

@@ -49,7 +49,7 @@ server.get('/cities', async (req, res) => {
 
   const options = {
     method: 'GET',
-    url: `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=5000&namePrefix=${inputValue}`,
+    url: `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?&namePrefix=${inputValue}`,
     headers: {
       'X-RapidAPI-Key': `${process.env.CITIES_KEY}`,
       'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
